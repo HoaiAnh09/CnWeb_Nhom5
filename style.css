@@ -1,0 +1,230 @@
+/* Cài đặt font mặc định */
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+/* Thanh điều hướng (Navbar) */
+.navbar {
+    background-color: #007bff;
+    padding: 10px 20px;
+    border-radius: 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.8rem;
+}
+
+.navbar-nav .nav-link {
+    color: #fff;
+    font-size: 1.1rem;
+    padding: 8px 20px;
+}
+
+.navbar-nav .nav-link:hover {
+    background-color: #0056b3;
+    color: #fff;
+}
+
+.navbar-nav .nav-link.active {
+    background-color: #004085;
+    color: #fff;
+}
+
+
+
+h1, h3 {
+    font-weight: bold;
+    color: #333;
+}
+
+/* Form và input */
+.form-control {
+    border-radius: 20px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+button {
+    background-color: #007bff;
+    border-color: #007bff;
+    color: white;
+    font-weight: bold;
+    border-radius: 20px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+
+button:focus {
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Table */
+.table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+}
+
+.table th, .table td {
+    padding: 15px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+.table th {
+    background-color: #007bff;
+    color: white;
+}
+
+.table tr:hover {
+    background-color: #f1f1f1;
+}
+
+
+
+/* Sidebar (cho trang Dashboard) */
+.sidebar {
+    background-color: #f4f4f4;
+    padding: 20px;
+    margin-right: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar .card {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.sidebar .card-body {
+    padding: 15px;
+}
+
+.sidebar .card-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+/* Chỉnh sửa cho các trang cụ thể */
+.page-header {
+    background-color: #007bff;
+    padding: 20px;
+    color: white;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.page-header h2 {
+    margin: 0;
+}
+
+/* Đặc biệt cho trang login */
+.login-container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.login-container h2 {
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.login-container .form-control {
+    margin-bottom: 10px;
+}
+
+.login-container button {
+    width: 100%;
+    margin-top: 10px;
+}
+
+/* Cho các trang add và edit */
+.form-container {
+    max-width: 800px;
+    margin: 50px auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.form-container h2 {
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.form-container .form-group {
+    margin-bottom: 15px;
+}
+
+/* Chỉnh sửa cho các phần tử khác như footer, thông báo lỗi, v.v. */
+footer {
+    background-color: #007bff;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.error-message {
+    background-color: #f8d7da;
+    color: #721c24;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.success-message {
+    background-color: #d4edda;
+    color: #155724;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+
+    .navbar-nav .nav-link {
+        font-size: 0.9rem;
+    }
+
+    .page-header {
+        padding: 15px;
+    }
+
+    .login-container, .form-container {
+        padding: 15px;
+    }
+}
+
+
+
+
+
+
+
+

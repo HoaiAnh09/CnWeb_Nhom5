@@ -11,7 +11,7 @@
                 <div class="card-body">
                     <h5 class="card-title">Tiêu đề tin tức</h5>
                     <p class="card-text">Mô tả ngắn về tin tức.</p>
-                    <a href="#" class="btn btn-primary">Đọc tiếp</a>
+                    <a href="CnWeb_Nhom5\views\news\detail.php" class="btn btn-primary">Đọc tiếp</a>
                 </div>
             </div>
         </div>

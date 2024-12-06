@@ -18,6 +18,7 @@ class HomeController {
         } else {
             $news = [];
         }
+
         include "views/home/search.php";
     }
 
@@ -29,6 +30,7 @@ class HomeController {
             header("Location: index.php?controller=home&action=index");
             exit();
         }
+
         include "views/news/detail.php";
     }
 }

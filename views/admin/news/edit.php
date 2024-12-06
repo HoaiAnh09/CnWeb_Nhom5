@@ -1,32 +1,38 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sửa Bài Viết</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-</head>
-<body>
-    <div class="container mt-4">
-        <h2>Sửa Bài Viết</h2>
-        <form>
-            <div class="mb-3">
-                <label for="title" class="form-label">Tiêu đề</label>
-                <input type="text" class="form-control" id="title" value="Bài viết hiện tại">
-            </div>
-            <div class="mb-3">
-                <label for="category" class="form-label">Danh mục</label>
-                <select class="form-select" id="category">
-                    <option value="1">Tin tức</option>
-                    <option value="2" selected>Giải trí</option>
-                </select>
-            </div>
-            <div class="mb-3">
-                <label for="content" class="form-label">Nội dung</label>
-                <textarea class="form-control" id="content" rows="5">Nội dung bài viết...</textarea>
-            </div>
-            <button type="submit" class="btn btn-primary">Lưu thay đổi</button>
-        </form>
-    </div>
-</body>
-</html>
+<?php include('../../../header.php'); ?>
+
+<div class="container mt-5">
+    <h1>Sửa Tin Tức</h1>
+
+    <!-- Form sửa tin tức -->
+    <form action="/admin/news/edit/<?php echo $news['id']; ?>" method="POST" enctype="multipart/form-data">
+        <div class="form-group">
+            <label for="title">Tiêu Đề:</label>
+            <input type="text" class="form-control" id="title" name="title" value="" required>
+        </div>
+        <div class="form-group">
+            <label for="category">Danh Mục:</label>
+            <select class="form-control" id="category" name="category" required>
+                <?php foreach ($categories as $category): ?>
+                    <option value="<?php echo $category['id']; ?>" <?php echo ($category['id'] == $news['category_id']) ? 'selected' : ''; ?>>
+                        <?php echo $category['name']; ?>
+                    </option>
+                <?php endforeach; ?>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="content">Nội Dung:</label>
+            <textarea class="form-control" id="content" name="content" rows="5" required><?php echo $news['content']; ?></textarea>
+        </div>
+        <div class="form-group">
+            <label for="image">Hình Ảnh:</label>
+            <input type="file" class="form-control" id="image" name="image">
+            <small class="form-text text-muted">Chọn hình ảnh mới nếu bạn muốn thay đổi.</small>
+            <?php if ($news['image']): ?>
+                <p>Hình ảnh hiện tại: <img src="/uploads/<?php echo $news['image']; ?>" alt="image" width="100"></p>
+            <?php endif; ?>
+        </div>
+        <button type="submit" class="btn btn-primary">Cập Nhật Tin Tức</button>
+    </form>
+</div>
+
+<?php include('../../../footer.php'); ?>

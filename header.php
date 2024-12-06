@@ -7,7 +7,6 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-     <!-- Thanh điều hướng -->
      <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
         <div class="container">
             <a class="navbar-brand" href="#">Website Tin Tức</a>
@@ -26,7 +25,6 @@
                         <a class="nav-link" href="/TH2/CnWeb_Nhom5/views/admin/login.php">Đăng nhập Admin</a>
                     </li>
                 </ul>
-                <!-- Form tìm kiếm -->
                 <form class="d-flex" role="search">
                     <input class="form-control me-2" type="search" placeholder="Tìm kiếm..." aria-label="Search">
                     <button class="btn btn-light" type="submit">Tìm</button>

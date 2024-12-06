@@ -20,7 +20,7 @@
                         <label for="password" class="form-label">Mật khẩu</label>
                         <input type="password" class="form-control" id="password">
                     </div>
-                         <button type="submit" class="btn btn-primary w-100">Đăng nhập</button>
+                         <a href="/TH2/CnWeb_Nhom5/views/admin/dashboard.php" type="submit" class="btn btn-primary w-100" >Đăng nhập</a>
                 </form>
             </div>
         </div>

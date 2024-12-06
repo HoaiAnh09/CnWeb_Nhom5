@@ -1,5 +1,5 @@
 <?php
-require_once "database.php";
+require_once "Database.php";
 
 class News {
     public static function getAll() {
@@ -14,13 +14,25 @@ class News {
         $stmt->execute([$id]);
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
-    public static function search($keyword) {
+  public function index() {
+        $searchQuery = isset($_GET['query']) ? $_GET['query'] : '';
+
         $db = Database::connect();
-        $stmt = $db->prepare("SELECT * FROM news WHERE title LIKE ? OR content LIKE ? ORDER BY created_at DESC");
-        $keyword = "%" . $keyword . "%";
-        $stmt->execute([$keyword, $keyword]);
-        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        if ($searchQuery != '') {
+            $query = "SELECT * FROM news WHERE title LIKE :query OR content LIKE :query ORDER BY created_at DESC";
+            $stmt = $db->prepare($query);
+            $stmt->execute(['query' => "%$searchQuery%"]);
+        } else {
+            $query = "SELECT * FROM news ORDER BY created_at DESC";
+            $stmt = $db->query($query);
+        }
+
+        $news = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        include 'views/home/index.php';
     }
 }
+
 ?>
     

@@ -14,7 +14,6 @@ class News {
         $stmt->execute([$id]);
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
-
     public static function search($keyword) {
         $db = Database::connect();
         $stmt = $db->prepare("SELECT * FROM news WHERE title LIKE ? OR content LIKE ? ORDER BY created_at DESC");
@@ -24,3 +23,4 @@ class News {
     }
 }
 ?>
+    

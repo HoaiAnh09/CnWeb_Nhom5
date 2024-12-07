@@ -1,3 +1,25 @@
+<?php
+include('../../header.php');
+include('../../Database.php');
+
+$db = Database::connect();
+
+$id = isset($_GET['id']) ? (int)$_GET['id'] : 0;
+
+if ($id > 0) {
+    $query = "SELECT * FROM news WHERE id = ?";
+    $stmt = $db->prepare($query);
+    $stmt->execute([$id]);
+    $news = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    if (!$news) {
+        $news = null;
+    }
+} else {
+    $news = null;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="vi">
 <head>

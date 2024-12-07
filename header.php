@@ -29,10 +29,10 @@
                         <a class="nav-link" href="/TH2/CnWeb_Nhom5/views/admin/login.php">Đăng nhập Admin</a>
                     </li>
                 </ul>
-                <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Tìm kiếm..." aria-label="Search">
-                    <button class="btn btn-light" type="submit">Tìm</button>
-                </form>
+                <form class="d-flex" role="search" method="GET" action="index.php">
+    <input class="form-control me-2" type="search" name="query" placeholder="Tìm kiếm..." aria-label="Search" value="<?= isset($_GET['query']) ? htmlspecialchars($_GET['query']) : '' ?>">
+    <button class="btn btn-light" type="submit">Tìm</button>
+</form>
             </div>
         </div>
     </nav>
